@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <script>
+//let learn the methods and properties we can use!
+// first property to learn :
+  console.log(document.title);
+  // the above code access the title in javascript and log it in the console
+
+  //if we changed title in dom it will be changed on the page 
+  document.title = "New Change!";
+
+  // next we have another property => document.body
+  console.log(document.body);
+  // above code show that this property is able to take the element in the body and link it to javscript code and with javscript we can change html content.
+  console.log(typeof document.body);
+
+  // above code will display that document.body is an object so it has property called innerHTML
+
+  console.log(document.body.innerHTML);
+
+  //the above code will take all element in the object document.body and log it into the console.
+
+  //if we changed the content of innerHTML the will change all the content of body to new content look at the example below:
+  document.body.innerHTML = "<button>bay levis!</button>"
+
+  //another property is document.queryselector
+  // it let us get any element on the page and put it inside javascript.
+
+  console.log(document.querySelector('button'));
+
+  document.querySelector('button').innerHTML = "changedMan"
+
+//you se that the innerHTML PROPERTY allow us to add new html element on the web page.
+  
+
+
+    /*
+    document.body.innerHTML = "Levis!!!"
+    // in above code document is object with properties like body and titles that we can access by dot notation!
+    document.title = "Good News!"
+
+    // the special thing about document object model is that it is linked to the web page.
+    // that means if we changed certain properties in this object the web page also will change!
+    //in addition to properties the dom has also methods
+    //such as querysellector('.object');
+    */
+  </script>
+</body>
+</html>

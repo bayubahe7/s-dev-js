@@ -27,6 +27,7 @@
 scOre.wins = 0;
 scOre.losses = 0;
 scOre.ties = 0;
+localStorage.removeItem('scOre');
 ">Reset Score</button>
 
   <br>
@@ -35,7 +36,35 @@ scOre.ties = 0;
   <p><a href="">click here</a> to see the final version of the project.</p>
     
   <script>
-    const scOre = JSON.parse(localStorage.getItem('scOre'));
+    // how below code works check if left side is true and if not it flip to the right side as default value.
+    let scOre = JSON.parse(localStorage.getItem('scOre')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+
+    //because in reset button we removed score when we click button it will give us null 
+    // to avoid this we set a default values when we clicked reset button
+    /*
+    if (scOre === null){
+      scOre = {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+    }
+
+// above codes shortcut using not operator is below
+if (!scOre){
+      scOre = {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
+    }
+
+*/
+// or we can use or operator (default operator to set default values when there is no score check at beginning of this script)
 
     function playGame (playerMove) {
  
