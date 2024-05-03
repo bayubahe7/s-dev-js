@@ -4,22 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+    .subscribe-button{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 15px;
+      margin-bottom: 40px;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      background-color: black;
+      cursor: pointer;
+    }
+    .subscribe-button:hover {
+      background-color: rgba(36, 32, 32, 0.846);
+      color: white;
+      transition: 0.5s ease;
+    }
+    .subscribed-button {
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .costInput{
+      font-size: 20px;
+      padding: 12px 20px;
+      outline: none;
+    }
+    .cal-button{
+      font-size: 20px;
+      padding: 14px 20px;
+      background-color: green;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
 
   <p>YouTube Subscribe Button</p>
-  <button class="js-subscribe-button"  onclick="
+  <button class="js-subscribe-button subscribe-button"  onclick="
       Subscribe();
 
   ">Subscribe</button>
 
   <p>Amazon Shipping Calculator</p>
-  <input type="text" placeholder="Cost of Order" class="js-input-elem" onkeydown="
+  <input type="text" placeholder="Cost of Order" class="js-input-elem  costInput" onkeydown="
      handlecostKeydown ();
   ">
   <button onclick=" 
   calculatedCost();
-  ">Calculate</button>
+  " class="cal-button">Calculate</button>
   <p class="js-cost-display"></p>
   
   <script>
@@ -51,9 +93,11 @@ function handlecostKeydown (){
       const buttonElem = document.querySelector('.js-subscribe-button');
 
       if (buttonElem.innerText === 'Subscribe') {
-          buttonElem.innerHTML = 'Subscribed'
+          buttonElem.innerHTML = 'Subscribed';
+          buttonElem.classList.add('subscribed-button');
       } else {
-        buttonElem.innerHTML = 'Subscribe'
+        buttonElem.innerHTML = 'Subscribe';
+        buttonElem.classList.remove('subscribed-button');
       }
 
     }

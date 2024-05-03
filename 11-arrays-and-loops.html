@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+</head>
+<body>
+  <script>
+    const myArray = [1,2,3,4];
+    console.log(myArray);
+    //output:(4) [1, 2, 3, 4] first value is length of array
+    console.log(typeof myArray);
+    //output:object means that array is special type of object
+    //check if myArray is array itself
+   console.log(Array.isArray(myArray));
+   //output is true! 
+   //as we have seen array is an object hence it has properties and methods
+   //properties:
+
+   console.log(myArray.length);
+   //output is 4 it has list of 4 values 
+
+   myArray.push(100);
+   //in above code we added 100 in myArray
+   console.log(myArray);
+   //now output (5) [1, 2, 3, 4, 100]
+   //.splice remove number from the array starting from the index you specified and remove specified number of values
+   myArray.splice(4,1);
+   console.log(myArray);
+  </script>
+</body>
+</html>
