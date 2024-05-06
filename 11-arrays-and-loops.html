@@ -7,6 +7,7 @@
 </head>
 <body>
   <script>
+    /*
     const myArray = [1,2,3,4];
     console.log(myArray);
     //output:(4) [1, 2, 3, 4] first value is length of array
@@ -28,6 +29,80 @@
    //.splice remove number from the array starting from the index you specified and remove specified number of values
    myArray.splice(4,1);
    console.log(myArray);
+   */
+/*
+   //Javascript loops are of two types while and for: 
+
+   //while loop
+   console.log("While Loop Ahead => !");
+   let i = 10;//loop variable
+   while (i >0)// loop condition
+   { //loop body
+    console.log(`${i} seconds! Did You? Know That This is a While loop!`);
+    i--;//incrementing step:because we are decreasing  is decrementing
+   }
+
+   //for loop:
+
+   //let change above loop into for loop to see how it looks:
+
+   console.log("For Loop Ahead => !");
+
+   for (let i = 10; i > 0; i--){
+    console.log(`${i} seconds! Did You? Know That This is a For loop!`);
+   }
+ 
+   //example of non standard loop
+
+   let randomNumber = 0;
+
+   while (randomNumber < 1) {
+    randomNumber = Math.random();
+    console.log(randomNumber);
+   }
+*/
+//looping through an array technic
+/*
+const myDream = ['lean code', 'master it well', 'get a good job', 'get money', 'build my tech company', 'enjoy to be my own Boss!'];
+
+for (i=0; i<myDream.length; i++) {
+  const value = myDream[i];
+  console.log(value);
+}
+*/
+/*
+//accumultor pattern technique
+let sum = 0;
+let arrayM = [1,1,3];
+
+for (i = 0; i <arrayM.length; i++){
+  sum += arrayM[i];
+  console.log(sum);
+}
+*/
+
+let sum = 0;
+const arraytoEv = [1,4,7,10,13,16,19,22];
+
+for (i = 0; i < arraytoEv.length; i++) {
+  let numbers = arraytoEv[i]; //saves all number before adding one by one;
+  sum += numbers;
+
+}
+console.log(sum); //console goes out to display final result instead of iterated results.
+
+let newArray = [];
+const firstArray = [1,1,3];
+
+for (let i=0; i < firstArray.length; i++) {
+  const values = firstArray[i];
+  newArray.push(values * 2);
+  
+}
+console.log(newArray);
+
+
+
   </script>
 </body>
 </html>
