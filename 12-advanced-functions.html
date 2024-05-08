@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  
+  <script>
+
+    function greetings (){
+      console.log('Hello Julia');
+    }
+    greetings ();
+
+    //the above code can be a shortcut for this 
+    /* var function greetings () {
+      console.log('Hello Julia');
+    }
+    greeting();
+    */
+
+   //functions are values we can save it into variable 
+
+   const functionY = function message (){
+    console.log('Welcome!!!');
+   }; //notice that we use semicolon because we are declaring a variable
+   //we can call this function in this way 
+   functionY();
+   //because we don't need name in calling above function we can declare it unnomously as follows
+   /*
+   const functionY = function (){
+    console.log('welcome!!!')
+   };
+   */
+/*
+  //we can have a function inside an object 
+
+  const objectX = { name:'Mark Twain',quote: function (){ 
+    console.log('"You can not Depend on Your Eyes when Your Imagination is out of focus"')}
+  };
+  //to access the function inside an object we uses dot notation as follows:
+  objectX.quote();
+
+  //function are values can be passed into another function:
+
+  function SmartX (systemX){
+    systemX()
+  }
+  SmartX(function (){
+    console.log(`said by ${objectX.name}`);
+  })
+  //the above function passed inside another function is called a callback function
+  */  
+setTimeout(function (){
+  console.log('Request Timeout!')
+}, 5000) //asynchronous code wont let finish to excute before continue to the next line
+
+console.log('hello!');
+
+setInterval(function (){
+  console.log('I will learn after every 3 seconds!');
+} , 3000)
+//setInterval and setTimeout are asynchronous code!
+
+//in above code first parameter is a function you want to run after a time you set in millisecond as the second parameter.
+
+</script>
+</body>
+</html>

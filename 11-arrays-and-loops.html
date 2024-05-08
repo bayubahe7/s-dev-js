@@ -80,7 +80,7 @@ for (i = 0; i <arrayM.length; i++){
   console.log(sum);
 }
 */
-
+/*
 let sum = 0;
 const arraytoEv = [1,4,7,10,13,16,19,22];
 
@@ -100,6 +100,69 @@ for (let i=0; i < firstArray.length; i++) {
   
 }
 console.log(newArray);
+*/
+
+const arrayA = [1,2,3] //this array doesn't contain this number instead it harbors the reference for this number
+//const arrayB = arrayA // this means arrayA and ArrayB have the same references
+//arrayB.push(4);
+//console.log(arrayA);
+//console.log(arrayB);
+//all will output the same out put because they have the same reference
+//to prevent this we can use .slice for an array we don't want to change 
+const arrayB = arrayA.slice();
+arrayB.push(4);
+console.log(arrayA);
+console.log(arrayB);
+
+//let learn new feature for loops //break //continue
+
+for (let i = 10; i > 0 ; i--){
+ 
+  if (i === 3){
+    continue; //this will skip this iteration for i = 3;
+  }
+
+  console.log(i);
+
+  //below if contion stop the loop before it finishes
+  
+  if (i === 2){
+    break;
+  }
+}
+
+//while loop is different when using continue to skip a given iteration you have to increment manually:
+ 
+ let i = 0;
+ while (i <= 100) {
+  if (i %2 === 0){
+    //before continue add incrementing step manually to avoid this continue to skip increment which can result to infinite loop:
+    i++;
+    continue;
+  }
+  console.log(i);
+  i++;
+ }
+
+ //how to use loops in function to allow us to reuse loop over and over again:
+function doubleTheArray(firstArray){
+
+ let newArray = [];
+//const firstArray = [1,1,3]; manual array we change it into a function parameter to allow this function to work on any array
+
+for (let i=0; i < firstArray.length; i++) {
+  if (i % 2 === 1){
+    break; // or you can use return to stop iteration
+  }
+  const values = firstArray[i];
+  newArray.push(values * 2);
+}
+return newArray;
+}
+console.log(doubleTheArray([7,9,3])); //array is passed as an urgument
+console.log(doubleTheArray([1,7,8])); 
+//by this method you can call function with different array you want to convert
+
 
 
 
