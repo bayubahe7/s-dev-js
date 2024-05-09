@@ -6,13 +6,31 @@
   <title>Advanced Functions</title>
 </head>
 <body>
+  <button class="button-element">Click Here> </button>
   
   <script>
+    const EventListener = () => {
+    console.log('Welcome Here!');
+  }
+  const buttonElemToJs = document.querySelector('.button-element');
+  buttonElemToJs.addEventListener('click', EventListener ()
+   );
+  //addEventLister is very useful than onclick attribute because it can be used to add multiple eventlistener on single event and also is possible to remove eventlistener using removeEventLister() method
+  buttonElemToJs.removeEventListener('click', EventListener ());
 
+  //add another eventlistener
+  buttonElemToJs.addEventListener('click', () => {
+    console.log ('We added New EventListener!')
+  });
+
+
+/*
     function greetings (){
       console.log('Hello Julia');
     }
     greetings ();
+
+*/
 
     //the above code can be a shortcut for this 
     /* var function greetings () {
@@ -22,7 +40,7 @@
     */
 
    //functions are values we can save it into variable 
-
+/*
    const functionY = function message (){
     console.log('Welcome!!!');
    }; //notice that we use semicolon because we are declaring a variable
@@ -53,6 +71,7 @@
   })
   //the above function passed inside another function is called a callback function
   */  
+ /*
 setTimeout(function (){
   console.log('Request Timeout!')
 }, 5000) //asynchronous code wont let finish to excute before continue to the next line
@@ -65,6 +84,67 @@ setInterval(function (){
 //setInterval and setTimeout are asynchronous code!
 
 //in above code first parameter is a function you want to run after a time you set in millisecond as the second parameter.
+*/
+/*
+[
+  "Levis",
+  "Jack",
+  "Aline",
+  "Henriette"
+].forEach(function (value){
+  console.log(value);
+});
+*/
+//how above method works it will go into the array and fetch the value of an array and save it back into the value and log it into the console
+//also the function above can have another parameter as follows:
+/*
+[
+  "Levis",
+  "Jack",
+  "Aline",
+  "Henriette"
+].forEach(function (value,index){
+  if (value === "Aline"){
+    return; //this will skip iteration as continue in for loop does.
+  }
+  console.log(index,value); //index will be saved back from the loop and logged in the console
+  //console.log(value);
+});
+//the above method has no break feature if you want to use it you have to use regular for loop
+
+//let learn arrow function
+
+//arrow function is a short way to write regular javascript function and has some short can than regular function but it work the same way as regular function
+
+//below is regular function
+
+const boss = function (parameter){
+  return parameter + 99;
+}
+//you can call above function by writting the variable name followed by parantheses
+console.log(boss(355));
+
+//let try to write an arrow function for above function
+const bossArrowfx = (parameter) => {
+  return parameter + 99;
+}
+//calling the function is the same as for regular function
+console.log(boss(355));
+
+//as we have mentioned arrow function has some shortcut the bove arrow function can have short following below rules:
+ //when the function has one parameter parantheses are optional
+ //example
+ const bossArrowfxS = parameter => {
+  return parameter + 99;
+ }
+ console.log(boss(355));
+ //when the function has one statement inside the bracket  the brackets are optional and the statement goes on the same line as the arrow!
+  //example
+  const bossArrowfxSs = parameter =>  parameter + 99;
+ 
+ console.log(boss(355));
+ */
+
 
 </script>
 </body>

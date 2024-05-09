@@ -34,11 +34,46 @@ scOre = {
 // or we can use or operator (default operator to set default values when there is no score check at beginning of this script)
 updatedScore ();
 
+let isAutoPlaying = false;
+let intervalId;
+
 function autoPlay (){
-  setInterval(function(){
-    playGame();
-  }, 1000)
+  if (!isAutoPlaying){
+   intervalId = setInterval(() => {
+      let playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+ 
 }
+const RockToJs = document.querySelector('.js-rock-btn');
+RockToJs.addEventListener('click',() => {
+  playGame ('Rock');
+});
+
+const PaperToJs = document.querySelector('.js-paper-btn');
+PaperToJs.addEventListener('click',() => {
+  playGame ('Paper');
+});
+
+const ScissorsToJs = document.querySelector('.js-scissors-btn');
+ScissorsToJs.addEventListener('click',() => {
+  playGame ('Scissors');
+});
+
+document.body.addEventListener('keydown', (Event) => {
+  if (Event.key === 'r') {
+    playGame ('Rock');
+  } else if (Event.key === 'p') {
+    playGame ('Paper');
+  } else if (Event.key === 's'){
+    playGame ('Scissors');
+  } 
+});
 
 
 
