@@ -15,10 +15,7 @@ todoList.forEach((todoObject, index) => {
    let html = `
                <div>${name}</div>
                <div>${dueDate}</div>
-               <button onclick="
-               todoList.splice(${index},1);
-               renderToDoList ();
-               " class="delete-todo-button">Delete</button>
+               <button class="delete-todo-button js-delete-button">Delete</button>
                `;
                // the above technique is called generating html
 
@@ -28,7 +25,16 @@ todoList.forEach((todoObject, index) => {
 
 document.querySelector('.js-todo-list').innerHTML = todoHTML;
 
+document.querySelectorAll('.js-delete-button')
+ .forEach((deleteButton, index) => {
+   deleteButton.addEventListener('click',() => {
+      todoList.splice(index,1);
+               renderToDoList ();
+   });
+ });
+
 }
+
 
 document.querySelector('.js-add-todo-btn').addEventListener('click', () => {
    addToDo();
