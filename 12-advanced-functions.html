@@ -6,9 +6,10 @@
   <title>Advanced Functions</title>
 </head>
 <body>
-  <button class="button-element">Click Here> </button>
+  <!--<button class="button-element">Click Here> </button>-->
   
   <script>
+/*
     const EventListener = () => {
     console.log('Welcome Here!');
   }
@@ -22,6 +23,8 @@
   buttonElemToJs.addEventListener('click', () => {
     console.log ('We added New EventListener!')
   });
+
+  */
 
 
 /*
@@ -144,6 +147,39 @@ console.log(boss(355));
  
  console.log(boss(355));
  */
+
+ //another array method .filter() and .map()
+
+ //filter method is like forEach method we give it a function and filter method return a number
+
+ const Array1 = [1,5,-3,9,-1,10];
+ //and we want to filter out all negative number in the above array using filter method
+
+ console.log(Array1.filter((value, index) => {
+  /*
+  if (value >= 0){
+    return true;
+  } else {
+    return false;
+  }
+  */
+  //all this if statement can be summarized as
+  return value >=0;
+  //the returned value are added to the new array
+
+ }));
+
+ //map work same as the above methods and take the same parameters //for explainations are in notebook
+
+ //example we want to transform our array into new array with each value added to 10 
+ console.log (Array1.map((value, index) => {
+  return value+10;
+ }));
+
+ //how above code work ?
+
+ //map take value in the array save it into value and return the value added to ten in new array
+
 
 
 </script>
